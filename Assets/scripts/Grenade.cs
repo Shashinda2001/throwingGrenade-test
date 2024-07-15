@@ -7,6 +7,7 @@ public class Grenade : MonoBehaviour
     // Start is called before the first frame update
     public float delay = 3f;
     bool hasExploded = false;
+    public GameObject explodeEfect;
     float countdown;
     void Start()
     {
@@ -26,6 +27,15 @@ public class Grenade : MonoBehaviour
 
    void Explode()
     {
+        //show fire effect
+        Instantiate(explodeEfect, transform.position, transform.rotation);
+
+        //get nearby objects
+        //add force
+        //damage
+
+        Destroy(gameObject);
+
         Debug.Log("boooom");
     }
 }
