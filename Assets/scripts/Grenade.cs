@@ -49,6 +49,13 @@ public class Grenade : MonoBehaviour
                 //add force
                 rb.AddExplosionForce(force, transform.position, radius);
             }
+
+            //add damage
+            destructible dest = nearbyObject.GetComponent<destructible>();
+            if (dest != null)
+            {
+                dest.triggerdestroy();
+            }
         }
        
         //damage
