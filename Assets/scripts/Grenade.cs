@@ -57,7 +57,19 @@ public class Grenade : MonoBehaviour
                 dest.triggerdestroy();
             }
         }
-       
+
+        Collider[] collidersToMove = Physics.OverlapSphere(transform.position, radius);
+
+        foreach(Collider nearbyObject in collidersToMove)
+        {
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                //add force
+                rb.AddExplosionForce(force, transform.position, radius);
+            }
+        }
+
         //damage
 
         Destroy(gameObject);
