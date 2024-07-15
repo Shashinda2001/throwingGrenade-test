@@ -58,6 +58,7 @@ public class Grenade : MonoBehaviour
             }
         }
 
+        //kadena kali wisikaranna
         Collider[] collidersToMove = Physics.OverlapSphere(transform.position, radius);
 
         foreach(Collider nearbyObject in collidersToMove)
